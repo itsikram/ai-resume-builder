@@ -10,7 +10,7 @@
     "build": "npm run build --prefix server && npm run build --prefix client",
     "start": "npm run start --prefix server",
     "seed": "npm run seed --prefix server",
-    "postinstall": "npm ci --prefix server && npm ci --prefix client",
+    "postinstall": "npm install --legacy-peer-deps --prefix server && npm install --legacy-peer-deps --prefix client",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down"
   },
