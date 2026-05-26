@@ -26,6 +26,13 @@ services:
     rootDir: client
     buildCommand: npm run build
     staticPublishPath: dist
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+    rewrites:
+      - source: /*
+        destination: /index.html
     envVars:
       - key: VITE_API_URL
         sync: false
