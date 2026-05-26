@@ -31,6 +31,18 @@ services:
         name: X-Frame-Options
         value: SAMEORIGIN
     rewrites:
+      - source: /assets/*
+        destination: /assets/*
+      - source: /favicon.svg
+        destination: /favicon.svg
+      - source: /icons.svg
+        destination: /icons.svg
+      - source: /og-image.svg
+        destination: /og-image.svg
+      - source: /sitemap.xml
+        destination: /sitemap.xml
+      - source: /templates/*
+        destination: /templates/*
       - source: /*
         destination: /index.html
     envVars:
