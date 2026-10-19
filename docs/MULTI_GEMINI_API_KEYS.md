@@ -1,7 +1,7 @@
 # Multi-Gemini API Keys Setup Guide
 
 ## Overview
-The ChakriCV AI Resume Builder now supports multiple Gemini API keys with automatic rotation and fallback handling. When one API key hits rate limits, the system automatically switches to the next available key.
+The AI CV Builder BD AI Resume Builder now supports multiple Gemini API keys with automatic rotation and fallback handling. When one API key hits rate limits, the system automatically switches to the next available key.
 
 ## Features
 ✅ **Automatic Key Rotation** - Distributes requests across multiple keys

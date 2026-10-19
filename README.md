@@ -1,4 +1,4 @@
-# ChakriCV — AI Resume Builder SaaS for Bangladesh
+# AI CV Builder BD — AI Resume Builder SaaS for Bangladesh
 
 Production-ready MERN stack SaaS platform for building ATS-optimized resumes, cover letters, and career documents. Powered by **Google Gemini 2.5 Flash**.
 
@@ -45,7 +45,7 @@ Production-ready MERN stack SaaS platform for building ATS-optimized resumes, co
 ## Project Structure
 
 ```
-chakricv/
+aicvbuilderbd/
 ├── client/                 # React frontend (Vite)
 │   ├── src/
 │   │   ├── components/     # UI, layout, resume, auth
@@ -97,7 +97,7 @@ cp client/.env.example client/.env
 Edit `server/.env` with your credentials (minimum):
 
 ```env
-MONGODB_URI=mongodb://localhost:27017/chakricv
+MONGODB_URI=mongodb://localhost:27017/aicvbuilderbd
 JWT_SECRET=your-32-char-minimum-secret-key-here
 JWT_REFRESH_SECRET=your-32-char-refresh-secret-key
 GEMINI_API_KEY=your-gemini-api-key
@@ -111,7 +111,7 @@ cd server
 npm run seed
 ```
 
-Default admin: `admin@chakricv.com` / `Admin@123456`
+Admin user: set `ADMIN_EMAIL` and `ADMIN_PASSWORD` in `server/.env`, then run `npm run seed`.
 
 ### 4. Run development
 
@@ -172,7 +172,7 @@ See [docs/API.md](docs/API.md) for full endpoint reference.
 
 Use connection string in `MONGODB_URI`:
 ```
-mongodb+srv://user:pass@cluster.mongodb.net/chakricv
+mongodb+srv://user:pass@cluster.mongodb.net/aicvbuilderbd
 ```
 
 ## Subscription Plans
@@ -188,7 +188,7 @@ mongodb+srv://user:pass@cluster.mongodb.net/chakricv
 | AI optimization | No | Yes |
 | Price | ৳0 | ৳499/mo |
 
-Coupon code `CHAKRI20` — 20% off Premium (seeded).
+Coupon code `AICVBD20` — 20% off Premium (seeded).
 
 ## Payment Setup
 

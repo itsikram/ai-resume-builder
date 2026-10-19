@@ -3,7 +3,7 @@ version: "3.9"
 services:
   mongodb:
     image: mongo:7
-    container_name: chakricv-mongo
+    container_name: aicvbuilderbd-mongo
     restart: unless-stopped
     ports:
       - "27017:27017"
@@ -15,7 +15,7 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: chakricv-redis
+    container_name: aicvbuilderbd-redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -26,7 +26,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    container_name: chakricv-api
+    container_name: aicvbuilderbd-api
     restart: unless-stopped
     ports:
       - "5000:5000"
@@ -43,7 +43,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-    container_name: chakricv-web
+    container_name: aicvbuilderbd-web
     restart: unless-stopped
     ports:
       - "5173:80"

@@ -1,54 +1,24 @@
+# Render blueprint (optional alternative host). The API serves the built client,
+# so a single web service is enough. See docs/DEPLOY_GODADDY.md for cPanel hosting.
 services:
   - type: web
-    name: chakricv-api
+    name: aicvbuilderbd
     env: node
-    rootDir: server
-    buildCommand: npm run build
-    startCommand: npm start
+    buildCommand: npm ci --prefix server && npm ci --prefix client && npm run build --prefix client && npm run build:server --prefix server
+    startCommand: npm start --prefix server
+    healthCheckPath: /api/v1/health
     envVars:
       - key: NODE_ENV
         value: production
+      - key: SITE_URL
+        value: https://aicvbuilderbd.online
       - key: MONGODB_URI
         sync: false
       - key: JWT_SECRET
         sync: false
       - key: JWT_REFRESH_SECRET
         sync: false
-      - key: CLIENT_URL
-        sync: false
-      - key: GEMINI_API_KEY
+      - key: GEMINI_API_KEYS
         sync: false
       - key: DISABLE_REDIS
         value: true
-
-  - type: static
-    name: chakricv-web
-    rootDir: client
-    buildCommand: npm run build
-    staticPublishPath: dist
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: SAMEORIGIN
-    rewrites:
-      - source: /assets/*
-        destination: /assets/*
-      - source: /favicon.svg
-        destination: /favicon.svg
-      - source: /icons.svg
-        destination: /icons.svg
-      - source: /og-image.svg
-        destination: /og-image.svg
-      - source: /sitemap.xml
-        destination: /sitemap.xml
-      - source: /templates/*
-        destination: /templates/*
-      - source: /*
-        destination: /index.html
-    envVars:
-      - key: VITE_API_URL
-        sync: false
-      - key: VITE_APP_URL
-        sync: false
-      - key: VITE_GOOGLE_CLIENT_ID
-        sync: false

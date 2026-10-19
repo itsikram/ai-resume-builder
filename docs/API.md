@@ -1,4 +1,4 @@
-# ChakriCV API Documentation
+# AI CV Builder BD API Documentation
 
 **Base URL:** `http://localhost:5000/api/v1`  
 **Version:** 1.0.0
@@ -141,11 +141,11 @@ Public resume (no auth).
 
 ### GET /payments/plans
 
-### GET /payments/calculate?planSlug=premium&billingCycle=monthly&couponCode=CHAKRI20
+### GET /payments/calculate?planSlug=premium&billingCycle=monthly&couponCode=AICVBD20
 
 ### POST /payments/sslcommerz
 ```json
-{ "planSlug": "premium", "billingCycle": "monthly", "couponCode": "CHAKRI20" }
+{ "planSlug": "premium", "billingCycle": "monthly", "couponCode": "AICVBD20" }
 ```
 
 ### POST /payments/bkash
@@ -180,7 +180,7 @@ SSLCommerz IPN callback (server-to-server).
 
 ### GET /health
 ```json
-{ "success": true, "message": "ChakriCV API is running", "version": "1.0.0" }
+{ "success": true, "message": "AI CV Builder BD API is running", "version": "1.0.0" }
 ```
 
 ---
